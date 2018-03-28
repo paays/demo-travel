@@ -1,0 +1,867 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.navbar.navbar-default{
+    background-color: #f7be00;
+    border-color: #f7be00;
+    border-radius: 0;
+    padding: 10px 0;
+    margin: 0;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #1e134f;
+    font-size: 17px;
+    transition: all 0.5s;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: #fff;
+    transition: all 0.5s;
+}
+.navbar-default .navbar-brand {
+    padding: 0px 15px;
+}
+.wrapebanner-section{
+	background: url("/static/images/Fill-Color.png");
+    padding: 90px 0;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.banner-lf-rt .text-left h3{
+	color: #fff;
+	font-size: 28px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+.banner-lf-rt .text-left h1{
+	color: #fff;
+	font-size: 60px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+.banner-lf-rt .text-left h2{
+	color: #fff;
+	font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 50px 0;
+    text-transform: uppercase;
+}
+.banner-lf-rt .text-left .btn-primary{
+	background-color: #f6bb00;
+    border-color: #f6bb00;
+    color: #191466;
+    padding: 10px 25px;
+    border-radius: 0;
+    font-size: 18px;
+}
+.banner-lf-rt .text-left .btn-primary:hover{
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+.wrape-offer{
+	width: 80%;
+    float: right;
+    background: rgba(0, 39, 80, 0.5);
+    padding: 30px;
+    border-radius: 5px;
+    text-align: left;
+    color: #fff;
+}
+.wrape-offer h1{
+	margin: 0;
+}
+.wrape-offer p{
+	font-size: 17px;
+    padding: 20px 0;
+    margin: 0;
+}
+.wrape-offer .btn-primary{
+    color: #fff;
+	background-color: rgb(77, 186, 239);
+    border-color: rgb(77, 186, 239);
+    border-radius: 30px;
+    padding: 7px 30px;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+.wrape-offer .btn-primary:hover{
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+
+.wrape-trip-form{
+	padding: 50px 0;
+	background: rgb(232, 232, 242);
+}
+.wrape-trip-form form .form-group{
+	text-align: left;
+	font-size: 15px;
+    font-weight: 500;
+    width: 21%;
+}
+.wrape-trip-form form .form-group:last-child{
+	width: 14%;
+	padding-top: 24px;
+}
+.wrape-trip-form form .form-group label{
+	text-align: left;
+	width: 100%;
+	font-size: 15px;
+    font-weight: 500;
+}
+.wrape-trip-form form .form-group select, .wrape-trip-form form .form-group input{
+	width: 100%;
+	border-radius: 0;
+    border: 1px solid #ccc;
+}
+.wrape-trip-form form .btn-default {
+    color: #fff;
+    background-color: rgb(0, 34, 103);
+    border-color: rgb(0, 34, 103);
+    border-radius: 0;
+    padding: 4px 30px;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.5s;
+}
+.wrape-trip-form form .btn-default:hover{
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+
+.views-trip-list{
+	padding: 35px 0;
+}
+.list-desc-title {
+    text-align: left;
+}
+.list-desc-title img {
+    width: 100%;
+}
+.list-desc-title h3{
+    padding: 15px;
+    font-size: 16px;
+    color: #222834;
+    background: rgb(232, 232, 242);
+    margin: 0;
+    text-transform: capitalize;
+}
+.list-desc-title h3 span{
+    color: #1e134f;
+}
+
+.list-sidebar-col{
+	text-align: left;
+}
+.list-sidebar-col h2{	
+	color: rgb(0, 34, 103);
+    font-size: 35px;
+    font-weight: 700!important;
+    margin: 0;
+    padding: 15px 0;
+    font-family: arial;
+}
+.list-sidebar-col ul{
+	padding: 0px;
+    margin: 0;
+    background: rgb(232, 232, 242);
+}
+.list-sidebar-col ul li {
+    padding: 10px;
+    margin: 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+.list-sidebar-col ul li a{
+	color: rgb(0, 34, 103)!important;
+    background: transparent!important;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 5px 0 5px 5px;
+    box-shadow: none!important;
+    transition: all 0.5s;
+}
+.list-sidebar-col ul li a.btn-info > span{
+	padding-right: 10px;
+    padding-top: 5px;
+}
+.list-sidebar-col ul li a[aria-expanded="true"] i{
+    transform: rotate(90deg);
+    transition: all 0.5s;
+}
+.list-sidebar-col-right {
+    text-align: left;
+}
+.list-sidebar-col-right .col-sm-3{
+    width: 250px;
+}
+.list-sidebar-col-right .col-sm-3.payment-mid-sect{
+    width: 20%;
+}
+.list-sidebar-col-right h2 {
+    color: rgb(0, 34, 103);
+    font-size: 35px;
+    font-weight: 700!important;
+    margin: 0;
+    padding: 15px 0;
+    font-family: arial;
+}
+.list-sidebar-col-right ul{
+	padding: 0px;
+    margin: 0;
+    float: left;
+    width: 100%;
+}
+.list-sidebar-col-right ul li {
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    float: left;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+.list-sidebar-col-right ul li img {
+    width: 100%;
+    height: 215px;
+}
+.details-mid-sect{
+
+}
+.details-mid-sect h1 {
+    color: #1d2f3d;
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: capitalize;
+    padding: 10px 0 0;
+}
+.star-rating img{
+	width: auto!important;
+    height: auto!important;
+}
+.details-mid-sect h5 {
+    color: #28205b;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0;
+}
+.details-mid-sect h4 {
+    color: #87949d;
+    font-size: 14px;
+}
+.details-mid-sect ul li {
+    border: none;
+    list-style: none;
+    color: #7f8e93;
+    font-size: 13px;
+    position: relative;
+    padding-left: 10px;
+    margin: 0;
+}
+.details-mid-sect ul li:after{
+	width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgb(184, 188, 191);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -2px;
+}
+.details-mid-sect ul .btn-default{
+	padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    color: rgb(0, 35, 105);
+    font-weight: 500;
+    margin: 10px 0px;
+    text-transform: capitalize;
+}
+.payment-mid-sect{
+	text-align: right;
+}
+.payment-mid-sect h1{
+	color: #1a1267;
+    font-size: 40px;
+    padding: 20px 0;
+    line-height: 20px;
+    margin: 0;
+}
+.payment-mid-sect h1 span{
+	font-size: 12px;
+    color: rgb(151, 157, 163);
+}
+.pay-low-sect {
+    background: #d9f4fd;
+    padding: 0 10px;
+    text-align: right;
+}
+.pay-low-sect h3 {
+    color: #1a1267;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+}
+.pay-low-sect h3 span {
+    font-size: 15px;
+}
+.payment-mid-sect .btn-primary {
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    color: #291d67;
+    padding: 8px 25px;
+    border-radius: 0;
+    font-size: 18px;
+    width: 100%;
+    margin: 2px 0;
+    transition: all 0.5s;
+}
+.payment-mid-sect .btn-primary:hover{
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+.wrape-view-more{
+    text-align: center;
+    padding: 25px 0;
+}
+.wrape-view-more .btn-primary {
+    background-color: rgb(0, 34, 103);
+    border-color: rgb(0, 34, 103);
+    color: #fff;
+    padding: 12px 38px;
+    border-radius: 0;
+    font-size: 20px;
+    margin: 2px 0;
+    transition: all 0.5s;
+}
+.wrape-view-more .btn-primary:hover{
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+
+
+/*Package css*/
+
+.wrape-vacationa-des{
+    text-align: left;
+    padding: 50px 0 20px;
+    background: #fff;
+}
+.wrape-vacationa-des h1 {
+    color: #1b1464;
+    font-size: 35px;
+    font-weight: 900!important;
+    margin: 0;
+    padding: 15px 0;
+    font-family: arial;
+    padding-top: 0;
+}
+.wrape-vacationa-des p{
+    font-size: 17px;
+    color: #4d535f;
+}
+.with-vacation-form .list-sidebar-col {
+    padding: 20px;
+    background: rgb(232, 232, 242);
+}
+.with-vacation-form .list-sidebar-col h3{
+    margin: 0;
+    padding: 0px 0 25px;
+    color: #191255;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 500;
+}
+.with-vacation-form {
+    padding: 0px 0 50px 0;
+    background: #ffff;
+}
+.with-vacation-form form .form-group {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.with-vacation-form form .form-group label {
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+}
+.with-vacation-form form .form-group select, .with-vacation-form form .form-group input {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #ccc;
+}
+.with-vacation-form form .btn-default {
+    color: #fff;
+    background-color: rgb(0, 34, 103);
+    border-color: rgb(0, 34, 103);
+    border-radius: 0;
+    padding: 4px 40px;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+.with-vacation-form form .form-group:last-child{
+    text-align: center;
+    margin: 10px 0 10px;
+}
+.with-vacation-form form .form-group.book-list {
+    width: 29%!important;
+    margin-right: 8px;
+}
+.advertize-sect{
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+.advertize-sect p{
+    color: #3e3c63;
+    font-size: 23px;
+    font-weight: 500;
+}
+.advertize-sect p.purchage-img{
+    margin: 30px 0;
+}
+.advertize-sect .btn-primary {
+    background-color: rgb(77, 186, 239);
+    border-color: rgb(77, 186, 239);
+    border-radius: 30px;
+    padding: 12px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+.advertize-sect .btn-primary:hover {
+     background-color: #f6bb00; 
+     border-color: #f6bb00; 
+     transition: all 0.5s; 
+}
+.advertize-sect .short-desc{
+    font-size: 16px;
+    color: #a6abae;
+    margin-bottom: 20px;
+}
+
+
+/*Booking Details*/
+
+.step-one--three {
+    text-align: left;
+    padding: 20px;
+    margin: 0 0 20px 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    float: left;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+.step-one--three h2{
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 23px;
+    color: #1c1362;
+    text-transform: capitalize;
+}
+.choose-fashion{
+    padding: 0;
+}
+.step-one--three h2 span.steps {
+    background: #fccb42;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+    font-size: 13px;
+    color: #1c1362;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.step-one--three h2 a{
+    color: #1c1362;
+}
+.sm-fonts{
+    font-size: 18px;
+}
+.booking-slots h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #799195;
+    padding: 5px 0;
+}
+.booking-slots p {
+    font-size: 17px;
+    color: #555965;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+}
+
+/* The container */
+.wrap-radio {
+    display: block;
+    position: relative;
+    padding: 18px 18px  18px 60px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    background: #e8e7ef;
+    color: #474f5c;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.wrap-radio span.duration-time{
+    font-size: 15px;
+    display: block;
+    width: 50%;
+}
+.wrap-radio span.pull-right{
+    padding-top: 10px;
+}
+
+/* Hide the browser's default radio button */
+.wrap-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    height: 26px;
+    width: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-top: -12px;
+    border: 2px solid #bbc0c4;
+}
+
+/* On mouse-over, add a grey background color */
+.wrap-radio:hover input ~ .checkmark {
+    background-color: #fff;
+}
+
+/* When the radio button is checked, add a blue background */
+.wrap-radio input:checked ~ .checkmark {
+    background-color: #fff;
+    border: 2px solid #1a1267;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.wrap-radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.wrap-radio .checkmark:after {
+    top: 50%;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #1a1267;
+    margin-top: -6px;
+}
+
+.passanger-details h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #799195;
+    padding: 5px 0;
+}
+.passanger-details form .form-group {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    width: 21%;
+    margin-bottom: 35px;
+}
+.passanger-details form .form-group label {
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+}
+.passanger-details form .form-group select, .passanger-details form .form-group input {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #ccc;
+}
+.next-button .btn-default {
+    color: #fff;
+    background-color: rgb(0, 34, 103);
+    border-color: rgb(0, 34, 103);
+    border-radius: 0;
+    padding: 10px 30px;
+    font-size: 20px;
+    width: 18%;
+    transition: all 0.5s;
+    text-align: left;
+    font-weight: 600;
+}
+.next-button .btn-default i.pull-right{
+    padding-top: 5px;
+}
+.next-button .btn-default:hover {
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+
+.booking-summary{
+    text-align: left;
+    padding: 0px;
+    display: block;
+    width: 100%;
+    float: left;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+.booking-sm-title {
+    margin: 0;
+    padding: 20px;
+    font-size: 23px;
+    color: #1c1362;
+    text-transform: capitalize;
+    background: #e8e7ef;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+.booking-summary ul {
+    padding: 0px;
+    margin: 0;
+}
+.booking-summary ul li {
+    padding: 20px;
+    margin: 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.booking-summary ul li:last-child{
+    border-bottom: none;
+}
+.booking-summary ul li a {
+    color: #495354!important;
+    font-size: 18px;
+    background: transparent!important;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 5px 0 5px 0px;
+    box-shadow: none!important;
+    transition: all 0.5s;
+}
+.booking-summary ul li a.btn-info > span {
+    padding-right: 10px;
+}    
+.data-content h3{
+    margin: 12px 0;
+    font-size: 17px;
+    color: #77798!important;
+}
+.data-content p{
+    color: #aab8bb;
+}
+.booking-summary ul li a[aria-expanded="true"] i{
+    transform: rotate(180deg);
+    transition: all 0.5s;
+}
+.booking-price-sect h3{
+    color: #495354!important;
+    font-size: 18px;
+    text-align: left;
+    padding: 5px 0 5px 0px;
+    margin: 0;
+}
+.booking-price-sect h3 span{
+    color: #81898b;
+}
+.detail-table tr td{
+    border: none!important;
+    color: #aab8bb;
+    padding: 10px 0 12px!important;
+    font-size: 15px;
+}
+.detail-table tr td b{
+    color: #515767;
+}
+.price-total-wrape{
+    background: #eaf9fe;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 100%;
+    float: left;
+    margin-bottom: 50px;
+}
+.price-total-wrape h3{
+    color: #2e3375;
+    text-align: right;
+    margin: 8px 0;
+}
+.price-total-wrape h3 span{
+    font-size: 16px;
+    color: #aab8bb;
+    display: block;
+}
+.price-total-wrape p{
+    color: #aab8bb;
+    font-size: 16px;
+    text-align: right;
+    margin: 0;
+}
+.price-total-wrape .btn-primary {
+    color: #fff;
+    background-color: rgb(77, 186, 239);
+    border-color: rgb(77, 186, 239);
+    border-radius: 30px;
+    padding: 7px 30px;
+    font-size: 16px;
+    margin: 20px 0 0;
+    transition: all 0.5s;
+}
+.price-total-wrape .btn-primary:hover {
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+
+/*Check out*/
+
+.goback a{
+    color: #1c1362!important;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.goback a:hover{
+    color: #f6bb00!important;
+    transition: all 0.5s;
+}
+.goback a span{
+    padding-right: 10px;
+}
+/*.checkoutform .wrap-radio{
+    background: transparent;
+    transition: all 0.5s;
+}
+.checkoutform .wrap-radio:hover{
+    background: #e8e7ef;
+    transition: all 0.5s;
+}*/
+
+
+/*Confirmation booking*/
+
+.confirmation .header-titles {
+    color: #1b1464;
+    font-size: 27px;
+    font-weight: 800!important;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    padding-top: 0;
+    text-align: left;
+}
+.confirmation p.rcv-mail{
+    text-align: left;
+    color: #4d515d;
+    font-size: 17px;
+    padding: 28px 0;
+    margin: 0;
+}
+.confirmation .booking-price-sect h2{
+    font-size: 27px;
+}
+.confirmation .booking-price-sect h2 small{
+    padding: 5px 0;
+    font-size: 18px;
+}
+.confirmation .booking-price-sect h3 {
+    color: #1b1464!important;
+    font-size: 22px;
+}
+.confirmation .detail-table tr td {
+    color: #44484b;
+    font-size: 15px;
+}
+.confirmation-right-side h2 {
+    color: #1b1464;
+    font-size: 26px;
+    font-weight: 500!important;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    padding-top: 0;
+    text-align: center;
+    margin-bottom: 28px;
+}
+.confirmation-right-side .btn-primary {
+    background-color: rgb(0, 34, 103);
+    border-color: rgb(0, 34, 103);
+    color: #fff;
+    padding: 12px 38px;
+    border-radius: 0;
+    font-size: 20px;
+    margin: 2px 0;
+    width: 65%;
+    transition: all 0.5s;
+}
+.confirmation-right-side  .btn-primary:hover {
+    background-color: #f6bb00;
+    border-color: #f6bb00;
+    transition: all 0.5s;
+}
+.confirmation-right-side .booking-summary {
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.confirmation-right-side .booking-summary h2{
+    padding: 25px 0;
+    margin: 0;
+}
+.confirmation-right-side .booking-summary p {
+    color: #44484b;
+    font-size: 18px;
+    margin-bottom: 20px;
+}

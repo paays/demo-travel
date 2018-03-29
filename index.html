@@ -18,5 +18,58 @@
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <!-- Modal -->
+    <div id="aboutpaays" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><img src="/static/images/pay-blue.png" alt="Sun Travell"></h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <h3 class="text-center">About Paays</h3>
+                <p>Paays is a new financing solution enabling you to complete your purchase today and pay for it in equal monthly installments over the next 12 months.</p>
+                <ul class="wrape-ab-paays">
+                  <li>Split your purchase into easy monthly installments</li>
+                  <li>Take advantage of our lender partner financing offering with interesting rates as low as 0%!</li>
+                  <li>Even those with bruised credit can apply!</li>
+                </ul>
+                <p class="text-center"><a href="http://paays.com/" target="_blank" class="btn btn-primary">Get Pre-Approved</a></p>
+              </div>
+              <div class="col-sm-6 range-price">
+                <h2 class="text-center">$334<br/><small>/ month</small></h2>
+                <div class="slidecontainer">
+                  <input type="range" min="100" max="4600" value="2300" class="slider" id="myRange">
+                  <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Total Amount: $<span id="demo"></span></p>
+                </div>
+                <div class="slidecontainer">
+                  <input type="range" min="1" max="50" value="1" class="slider1" id="myRange1">
+                  <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Term: <span id="demo1"></span> Year(Default)</p>
+                </div>
+                <p class="text-center" style="color: rgb(0, 34, 103);margin-bottom: 50px;">Rate: 9.99%</p>
+                <p style="color:#fff;">Monthly payment is based on a 9.99%. Actual payment will be dependent on borrower's credit rating, and paays lender partners 'offerde' interest rates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+      var slider1 = document.getElementById("myRange1");
+      var output1 = document.getElementById("demo1");
+      output1.innerHTML = slider1.value;
+      slider1.oninput = function() {
+        output1.innerHTML = this.value;
+      }
+    </script>
   </body>
 </html>

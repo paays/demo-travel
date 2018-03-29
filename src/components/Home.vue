@@ -15,7 +15,7 @@
                 <img src="/static/images/paays.png" alt="Sun Travell">
               </h2>
               <p>Purchage your trip today and pay for it over the next 12 months with paays.</p>
-              <a href="#/BookingPackage" class="btn btn-primary">Learn more</a>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#aboutpaays">Learn more</button>
             </div>
           </div>
         </div>

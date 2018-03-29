@@ -16,17 +16,17 @@
               </h2>
               <div class="col-sm-6 booking-slots">
                 <h3>Flight Number: WG656</h3>
-                <p>Toronto (XYZ) to Manzanillo de Cube (MZO)</p>
+                <p>Toronto (XYZ) to Manzanillo de Cuba (MZO)</p>
                 <p style="margin-bottom: 0;">Departing: Wed Mar 14 2018 2:25 PM</p>
                 <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                <p>2 tickects (2 adults)</p>
+                <p>2 tickets (2 adults)</p>
               </div>
               <div class="col-sm-6 booking-slots">
                 <h3>Flight Number: WG657</h3>
-                <p>Manzanillo de Cube (MZO) Toronto (XYZ)</p>
+                <p>Manzanillo de Cuba (MZO) Toronto (XYZ)</p>
                 <p style="margin-bottom: 0;">Departing: Wed Mar 21 2018 7:25 PM</p>
                 <p>Arriving: Wed Mar 21 2018 11:15 PM</p>
-                <p>2 tickects (2 adults)</p>
+                <p>2 tickets (2 adults)</p>
               </div>
             </div>
             <div class="step-one--three">
@@ -127,10 +127,10 @@
                   </a>
                   <div id="hotel" class="collapse data-content">
                     <h3>Flight Number: WG656</h3>
-                    <p>Toronto (XYZ) to Manzanillo de Cube (MZO)</p>
+                    <p>Toronto (XYZ) to Manzanillo de Cuba (MZO)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                    <p>2 tickects (2 adults)</p>
+                    <p>2 tickets (2 adults)</p>
                   </div>
                 </li>
                 <li>
@@ -139,15 +139,15 @@
                   </a>
                   <div id="flight" class="collapse data-content">
                     <h3>Flight Number: WG656</h3>
-                    <p>Toronto (XYZ) to Manzanillo de Cube (MZO)</p>
+                    <p>Toronto (XYZ) to Manzanillo de Cuba (MZO)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                    <p>2 tickects (2 adults)</p>
+                    <p>2 tickets (2 adults)</p>
                     <h3>Flight Number: WG657</h3>
-                    <p>Manzanillo de Cube (MZO) Toronto (XYZ)</p>
+                    <p>Manzanillo de Cuba (MZO) Toronto (XYZ)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                    <p>2 tickects (2 adults)</p>
+                    <p>2 tickets (2 adults)</p>
                   </div>
                 </li>
                 <li class="booking-price-sect">

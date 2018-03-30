@@ -35,7 +35,7 @@
               </div>
             </div>
             <div id="apply-finance" v-show="seen === 'finance'">
-              <iframe width="100%" height="500" src="http://18.216.107.27:9000/paays" frameborder="0" allowfullscreen></iframe>
+              <iframe width="100%" height="500" src="http://localhost:9000/paays" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
           <div class="col-sm-3">
@@ -51,7 +51,7 @@
                     <p>Toronto (XYZ) to Manzanillo de Cube (MZO)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                    <p>2 tickects (2 adults)</p>
+                    <p>2 tickets (2 adults)</p>
                   </div>
                 </li>
                 <li>
@@ -63,12 +63,12 @@
                     <p>Toronto (XYZ) to Manzanillo de Cube (MZO)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                    <p>2 tickects (2 adults)</p>
+                    <p>2 tickets (2 adults)</p>
                     <h3>Flight Number: WG657</h3>
                     <p>Manzanillo de Cube (MZO) Toronto (XYZ)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
-                    <p>2 tickects (2 adults)</p>
+                    <p>2 tickets (2 adults)</p>
                   </div>
                 </li>
                 <li class="booking-price-sect">

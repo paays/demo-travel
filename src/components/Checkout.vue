@@ -91,7 +91,7 @@
                       </tr>
                       <tr>
                         <td ><b>Total</b></td>
-                        <td align="right"><b>$1,330.00 CAD</b></td>
+                        <td align="right"><b>{{ total | currency }} CAD</b></td>
                       </tr>
                     </tbody>
                   </table>
@@ -100,7 +100,7 @@
             </div>
             <div class="price-total-wrape">
               <p><i>Pay as low as</i></p>
-              <h3>$110<span> / month</span></h3>
+              <h3>${{emi}}<span> / month</span></h3>
               <p>using <img src="/static/images/booking-img.png" alt="Sun Travell"> at Checkout</p>
               <a href="#/BookingPackage" class="btn btn-primary">Learn more</a>
             </div>
@@ -112,13 +112,53 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
+Vue.filter('currency', (val) => {
+  let nf = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+  return nf.format(val);
+});
+
 export default {
   name: 'Checkout',
-  data () {
+ data () {
     return {
+      seen: false,
       msg: 'Welcome to Your Vue.js App',
-      seen: false
+      total: 1330.00,
+      taxes: '380.00',
+      airFee: '285.00',
+      emi: 110,
+      year: 1,
+      rate: 9.99,
+      amount: 1200,
+      checked: 29.99,
+      rates: [{
+          duration: '7 days',
+          value: 29.99,
+          checked: true
+      },{
+          duration: '7 days',
+          value: 89.99,
+          checked: false
+      },{
+         duration: '7 days',
+         value: 129.99,
+         checked: false
+      }]
     }
+  },
+  watch: {
+    'checked': 'calculateTotal'
+  },
+  created() {
+    this.total = + (this.$route.query.total);
+    this.emi = this.$route.query.emi;
   }
 }
 </script>

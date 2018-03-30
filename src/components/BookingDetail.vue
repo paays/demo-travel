@@ -35,22 +35,10 @@
               </h2>
               <div class="col-sm-12 choose-fashion">
                 <form>
-                  <label class="wrap-radio">
-                    Room (Double)<span class="pull-right">Included</span>
-                    <span class="duration-time">Duration: 7 days</span>
-                    <input type="radio" checked="checked" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="wrap-radio">
-                    Superior Room (Double)<span class="pull-right">+ $8.97 per night/per person</span>
-                    <span class="duration-time">Duration: 7 days</span>
-                    <input type="radio" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-                  <label class="wrap-radio">
-                    Room (Double)<span class="pull-right">+ $14.97 per night/per person</span>
-                    <span class="duration-time">Duration: 7 days</span>
-                    <input type="radio" name="radio">
+                  <label class="wrap-radio" v-for="(rate, i) in rates">
+                    Room (Double)<span class="pull-right">+ ${{ rate.value }} per night/per person</span>
+                    <span class="duration-time">Duration: {{rate.duration}}</span>
+                    <input type="radio" :checked="rate.checked" :value="rate.value" v-model="checked" name="radio">
                     <span class="checkmark"></span>
                   </label>
                 </form>
@@ -114,7 +102,7 @@
               </div>
             </div>
             <p class="next-button text-right">
-              <a href="#/Checkout" type="text" class="btn btn-default">Next <i class="fa fa-chevron-right pull-right"></i></a>
+              <router-link :to="{ path: `/Checkout?total=${total}&tax=${taxes}&emi=${emi}` }" type="text" class="btn btn-default">Next <i class="fa fa-chevron-right pull-right"></i></router-link>
             </p>
           </div>
           <div class="col-sm-3">
@@ -157,8 +145,8 @@
                   <table class="table table-condensed detail-table">
                     <tbody>
                       <tr>
-                        <td>Air Transportation Charges</td>
-                        <td align="right"><b>$285.00</b></td>
+                        <td>Hotel and Air Charges</td>
+                        <td align="right"><b>${{ airFee }}</b></td>
                       </tr>
                       <tr>
                         <td>Surcharges</td>
@@ -166,11 +154,11 @@
                       </tr>
                       <tr>
                         <td>Taxes, Fees and Charges</td>
-                        <td align="right"><b>$380.00</b></td>
+                        <td align="right"><b>${{taxes}}</b></td>
                       </tr>
                       <tr>
                         <td ><b>Total</b></td>
-                        <td align="right"><b>$1,330.00 CAD</b></td>
+                        <td align="right"><b>{{total | currency }} CAD</b></td>
                       </tr>
                     </tbody>
                   </table>
@@ -179,7 +167,7 @@
             </div>
             <div class="price-total-wrape">
               <p><i>Pay as low as</i></p>
-              <h3>$110<span> / month</span></h3>
+              <h3>${{ emi  }}<span> / month</span></h3>
               <p>using <img src="/static/images/booking-img.png" alt="Sun Travell"> at Checkout</p>
               <a href="#/BookingPackage" class="btn btn-primary">Learn more</a>
             </div>
@@ -191,12 +179,62 @@
 </template>
 
 <script>
+import Vue from 'vue';
+
+Vue.filter('currency', (val) => {
+  let nf = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          });
+  return nf.format(val);
+});
 export default {
   name: 'Booking',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      total: 1330.00,
+      taxes: '380.00',
+      airFee: '285.00',
+      emi: 110,
+      year: 1,
+      rate: 9.99,
+      amount: 1200,
+      checked: 29.99,
+      rates: [{
+          duration: '7 days',
+          value: 29.99,
+          checked: true
+      },{
+          duration: '7 days',
+          value: 89.99,
+          checked: false
+      },{
+         duration: '7 days',
+         value: 129.99,
+         checked: false
+      }]
     }
+  },
+  watch: {
+    'checked': 'calculateTotal'
+  },
+  methods: {
+      getRate(total){
+        return total*(this.rate/100);
+      },
+      payable(total){
+        return this.getRate()+total;
+      },
+      monthly(total){
+        return ((total + this.getRate(total))/12).toFixed(0);
+      },
+      calculateTotal(val){
+        this.total = (val*2) + this.amount;
+        this.emi = this.monthly(this.total);
+      }
   }
 }
 </script>

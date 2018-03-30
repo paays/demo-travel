@@ -24,7 +24,7 @@
                     <tbody>
                       <tr>
                         <td>Air Transportation Charges</td>
-                        <td align="right">$285.00</td>
+                        <td align="right">${{ airFee }}</td>
                       </tr>
                       <tr>
                         <td>Surcharges</td>
@@ -36,7 +36,7 @@
                       </tr>
                       <tr>
                         <td ><big>Total</big></td>
-                        <td align="right"><big>$1,330.00 CAD</big></td>
+                        <td align="right"><big>${{ total }} CAD</big></td>
                       </tr>
                     </tbody>
                   </table>
@@ -71,7 +71,9 @@ export default {
   name: 'Checkout',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      total: 1330.00,
+      airFee: 285.00
     }
   }
 }

@@ -40,13 +40,13 @@
                 <p class="text-center"><a href="http://paays.com/" target="_blank" class="btn btn-primary">Get Pre-Approved</a></p>
               </div>
               <div class="col-sm-6 range-price">
-                <h2 class="text-center">$334<br/><small>/ month</small></h2>
+                <h2 class="text-center">$<span id="emi">334</span><br/><small>/ month</small></h2>
                 <div class="slidecontainer">
-                  <input type="range" min="100" max="4600" value="2300" class="slider" id="myRange">
+                  <input type="range" min="100" max="4600" value="2300" class="slider" id="amount">
                   <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Total Amount: $<span id="demo"></span></p>
                 </div>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="50" value="1" class="slider1" id="myRange1">
+                  <input type="range" min="1" max="50" value="1" class="slider1" id="year">
                   <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Term: <span id="demo1"></span> Year(Default)</p>
                 </div>
                 <p class="text-center" style="color: rgb(0, 34, 103);margin-bottom: 50px;">Rate: 9.99%</p>
@@ -58,17 +58,40 @@
       </div>
     </div>
     <script>
-      var slider = document.getElementById("myRange");
+      var emi = 0;
+      var amount = 2300;
+      var year = 1;
+      var rate = 9.99;
+      var emiEl = document.getElementById('emi');
+      var slider = document.getElementById("amount");
       var output = document.getElementById("demo");
+
+      emiEl.innerHTML = monthly();
+
       output.innerHTML = slider.value;
       slider.oninput = function() {
         output.innerHTML = this.value;
+        amount = +this.value;
+        emiEl.innerHTML = monthly();
       }
-      var slider1 = document.getElementById("myRange1");
+      var slider1 = document.getElementById("year");
       var output1 = document.getElementById("demo1");
       output1.innerHTML = slider1.value;
       slider1.oninput = function() {
         output1.innerHTML = this.value;
+        year = +this.value;
+        emiEl.innerHTML = monthly();
+      }
+
+      function getRate(){
+        return amount*(rate/100)*year;
+      }
+
+      function payable(){
+        return getRate()+amount;
+      }
+      function monthly(){
+        return ((amount + getRate())/(year*12)).toFixed(0);
       }
     </script>
   </body>

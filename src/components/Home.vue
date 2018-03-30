@@ -7,7 +7,8 @@
             <h3>Top Ten</h3>
             <h1>Summer </h1>
             <h2>Vacations</h2>
-            <button class="btn btn-primary">Take me there !</button>
+             <!-- linkt to bookingpackage -->
+            <router-link to="/bookingpackage" class="btn btn-primary">Take me there !</router-link>
           </div>
           <div class="col-sm-6 text-right">
             <div class="wrape-offer">

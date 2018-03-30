@@ -27,7 +27,7 @@
                     <span class="checkmark"></span>
                   </label>
                   <label class="wrap-radio">
-                    Finance with Paays<span class="pull-right" style="padding-top:0;"><small>As low as </small><b>$112</b><small> /month*</small></span>
+                    Finance with Paays<span class="pull-right" style="padding-top:0;"><small>As low as </small><b>${{emi}}</b><small> /month*</small></span>
                     <input type="radio" name="radio" v-model="seen" value="finance">
                     <span class="checkmark"></span>
                   </label>

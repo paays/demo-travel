@@ -29,19 +29,19 @@
             <div class="form-group">
               <label>Departing from</label>
               <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+                <option>Toronto</option>
+                <option>Kingston</option>
+                <option>Ottawa</option>
+                <option>Muskoka</option>
               </select>
             </div>
             <div class="form-group">
               <label>Going to</label>
               <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
+                <option>Cayman Islands</option>
+                <option>Lake Como</option>
+                <option>Paris</option>
+                <option>Frankfurt</option>
               </select>
             </div>
             <div class="form-group">

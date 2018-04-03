@@ -14,20 +14,20 @@
                 <span class="steps">1</span> Flight Details
                 <a href="#" class="pull-right sm-fonts">Change</a>
               </h2>
-             <!-- <div class="col-sm-6 booking-slots">
+             <div class="col-sm-6 booking-slots">
                 <h3>Flight Number: WG656</h3>
                 <p>Toronto (XYZ) to Manzanillo de Cuba (MZO)</p>
                 <p style="margin-bottom: 0;">Departing: Wed Mar 14 2018 2:25 PM</p>
                 <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
                 <p>2 tickets (2 adults)</p>
-              </div> 
+              </div>
               <div class="col-sm-6 booking-slots">
                 <h3>Flight Number: WG657</h3>
                 <p>Manzanillo de Cuba (MZO) Toronto (XYZ)</p>
                 <p style="margin-bottom: 0;">Departing: Wed Mar 21 2018 7:25 PM</p>
                 <p>Arriving: Wed Mar 21 2018 11:15 PM</p>
                 <p>2 tickets (2 adults)</p>
-              </div>-->
+              </div>
             </div>
             <div class="step-one--three">
               <h2 class="header-titles">
@@ -36,7 +36,7 @@
               <div class="col-sm-12 choose-fashion">
                 <form>
                   <label class="wrap-radio" v-for="(rate, i) in rates">
-                    Room (Double)<span class="pull-right">+ ${{ rate.value }} per night/per person</span>
+                    {{ rate.title }}<span class="pull-right" v-if="rate.value > 0">+ ${{ rate.value }} per night/per person</span>
                     <span class="duration-time">Duration: {{rate.duration}}</span>
                     <input type="radio" :checked="rate.checked" :value="rate.value" v-model="checked" name="radio">
                     <span class="checkmark"></span>
@@ -113,19 +113,19 @@
                   <a href="#hotel" class="btn btn-info" data-toggle="collapse">Hotel
                     <span class="pull-right"><i class="fa fa-chevron-down"></i></span>
                   </a>
-                <!--  <div id="hotel" class="collapse data-content">
+                 <div id="hotel" class="collapse data-content">
                     <h3>Flight Number: WG656</h3>
                     <p>Toronto (XYZ) to Manzanillo de Cuba (MZO)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
                     <p>2 tickets (2 adults)</p>
-                  </div> -->
+                  </div>
                 </li>
                 <li>
                   <a href="#flight" class="btn btn-info" data-toggle="collapse">Flight
                     <span class="pull-right"><i class="fa fa-chevron-down"></i></span>
                   </a>
-                 <!-- <div id="flight" class="collapse data-content">
+                 <div id="flight" class="collapse data-content">
                     <h3>Flight Number: WG656</h3>
                     <p>Toronto (XYZ) to Manzanillo de Cuba (MZO)</p>
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
@@ -136,7 +136,7 @@
                     <p style="margin-bottom: 0px;">Departing: Wed Mar 14 2018 2:25 PM</p>
                     <p>Arriving: Wed Mar 14 2018 6:20 PM</p>
                     <p>2 tickets (2 adults)</p>
-                  </div> -->
+                  </div>
                 </li>
                 <li class="booking-price-sect">
                   <h3>Price
@@ -202,26 +202,38 @@ export default {
       year: 1,
       rate: 9.99,
       amount: 1200,
-      checked: 29.99,
+      checked: 0,
       rates: [{
           duration: '7 days',
-          value: 29.99,
+          value: 0,
+          title: 'Standard Room',
           checked: true
       },{
+          title: 'Superior Room',
           duration: '7 days',
-          value: 89.99,
+          value: 29.99,
           checked: false
       },{
+         title: '1-Bedroom Junior Suite',
          duration: '7 days',
-         value: 129.99,
+         value: 69.99,
          checked: false
       }]
     }
   },
   watch: {
-    'checked': 'calculateTotal'
+    'checked': 'calculateTotal',
+    '$route': 'setValues'
+  },
+  created() {
+    this.setValues();
   },
   methods: {
+      setValues(){
+        this.amount = + this.$route.query.cost;
+        this.emi = + this.$route.query.emi;
+        this.calculateTotal(0);
+      },
       getRate(total){
         return total*(this.rate/100);
       },
@@ -255,4 +267,5 @@ li {
 a {
   color: #42b983;
 }
+
 </style>

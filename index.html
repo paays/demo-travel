@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>SUN TRAVELL</title>
+    <title>Sun Travel</title>
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,7 +25,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><img src="/static/images/pay-blue.png" alt="Sun Travell"></h4>
+            <h4 class="modal-title"><img src="/static/images/pay-blue.png" alt="Sun Travel"></h4>
           </div>
           <div class="modal-body">
             <div class="row">
@@ -46,11 +46,11 @@
                   <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Total Amount: $<span id="demo"></span></p>
                 </div>
                 <div class="slidecontainer">
-                  <input type="range" min="1" max="50" value="1" class="slider1" id="year">
-                  <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Term: <span id="demo1"></span> Year(Default)</p>
+                  <input type="range" min="6" max="18" value="12" class="slider1" id="month">
+                  <p class="text-center" style="padding: 15px 0; color: rgb(0, 34, 103);">Term: <span id="demo1"></span> Months(Default)</p>
                 </div>
                 <p class="text-center" style="color: rgb(0, 34, 103);margin-bottom: 50px;">Rate: 9.99%</p>
-                <p style="color:#fff;">Monthly payment is based on a 9.99%. Actual payment will be dependent on borrower's credit rating, and paays lender partners 'offerde' interest rates.</p>
+                <p style="color:#fff;">Monthly payment is based on a 9.99%. Actual payment will be dependent on borrower's credit rating, and Paays lender partner offered interest rates.  </p>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
     <script>
       var emi = 0;
       var amount = 2300;
-      var year = 1;
+      var months = 12;
       var rate = 9.99;
       var emiEl = document.getElementById('emi');
       var slider = document.getElementById("amount");
@@ -74,16 +74,17 @@
         amount = +this.value;
         emiEl.innerHTML = monthly();
       }
-      var slider1 = document.getElementById("year");
+      var slider1 = document.getElementById("month");
       var output1 = document.getElementById("demo1");
       output1.innerHTML = slider1.value;
       slider1.oninput = function() {
         output1.innerHTML = this.value;
-        year = +this.value;
+        months = +this.value;
         emiEl.innerHTML = monthly();
       }
 
       function getRate(){
+        let year = Math.round(months/12);
         return amount*(rate/100)*year;
       }
 
@@ -91,7 +92,7 @@
         return getRate()+amount;
       }
       function monthly(){
-        return ((amount + getRate())/(year*12)).toFixed(0);
+        return ((amount + getRate())/(months)).toFixed(0);
       }
     </script>
   </body>

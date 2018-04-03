@@ -99,10 +99,10 @@
               </ul>
             </div>
             <div class="price-total-wrape">
-              <p><i>Pay as low as</i></p>
+              <!-- <p><i>Pay as low as</i></p>
               <h3>${{emi}}<span> / month</span></h3>
               <p>using <img src="/static/images/booking-img.png" alt="Sun Travell"> at Checkout</p>
-              <a href="#/BookingPackage" class="btn btn-primary">Learn more</a>
+              <a href="#/BookingPackage" class="btn btn-primary">Learn more</a> -->
             </div>
           </div>
         </div>
@@ -178,5 +178,14 @@ li {
 }
 a {
   color: #42b983;
+}
+
+
+.price-total-wrape {
+  background: transparent !important;
+}
+
+#apply-finance {
+  height: auto;
 }
 </style>

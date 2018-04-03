@@ -15,7 +15,7 @@
               <h2>Now offering instalment financing with
                 <img src="/static/images/paays.png" alt="Sun Travell">
               </h2>
-              <p>Purchage your trip today and pay for it over the next 12 months with paays.</p>
+              <p>Purchase your trip today and pay for it over the next 12 months with paays.</p>
               <button class="btn btn-primary" data-toggle="modal" data-target="#aboutpaays">Learn more</button>
             </div>
           </div>
@@ -178,14 +178,14 @@
             </ul>
           </div>
           <div class="col-sm-9 list-sidebar-col-right">
-            <h2>Recommended to You</h2>
+            <h2>Recommended for You</h2>
             <ul>
-              <li>
+              <li v-for="item in packages">
                 <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/sebastien-jermer-5.png" alt="Sun Travell">
+                  <img :src="item.img" alt="Sun Travell">
                 </div>
                 <div class="col-sm-6 details-mid-sect">
-                  <h1>Starfish Cayo Santa Maria</h1>
+                  <h1>{{item.title}}</h1>
                   <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
                   <h5>Starfish Cayo Santa Maria</h5>
                   <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
@@ -197,14 +197,14 @@
                   </ul>
                 </div>
                 <div class="col-sm-3 payment-mid-sect">
-                  <h1>$650<br/> <span class="">taxes & fees incl.</span></h1>
+                  <h1>${{item.price}}<br/> <span class="">taxes & fees incl.</span></h1>
                   <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $55 <br/><span> / month*</span></h3>
+                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> ${{item.emi}} <br/><span> / month*</span></h3>
                   </div>
-                  <a href="#/BookingPackage" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+                  <router-link :to="{ path: `/BookingDetail?cost=${item.price}&emi=${item.emi}` }" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></router-link>
                 </div>
               </li>
-              <li>
+              <!-- <li>
                 <div class="col-sm-3" style="padding-left: 0;">
                   <img src="/static/images/sebastien-jermer-4.png" alt="Sun Travell">
                 </div>
@@ -275,7 +275,7 @@
                   </div>
                   <a href="#/BookingPackage" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
                 </div>
-              </li>
+              </li> -->
             </ul>
             <div class="wrape-view-more">
               <button class="btn btn-primary">View More</button>
@@ -292,7 +292,28 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      packages: [{
+        img: '/static/images/sebastien-jermer-5.png',
+        title: 'Starfish Cayo Santa Maria',
+        price: 650,
+        emi: 55
+      }, {
+        img: '/static/images/sebastien-jermer-4.png',
+        title: 'Roc Barlovento',
+        price: 650,
+        emi: 55
+      }, {
+        img: '/static/images/sebastien-jermer-3.png',
+        title: 'Playa Blanca Resort',
+        price: 650,
+        emi: 55
+      }, {
+        img: '/static/images/sebastien-jermer.png',
+        title: 'Memories Flamenco Beach Resort',
+        price: 650,
+        emi: 55
+      }]
     }
   }
 }

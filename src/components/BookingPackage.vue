@@ -16,6 +16,7 @@
                 <div class="form-group">
                   <label>Departing from</label>
                   <select class="form-control">
+                    <option disabled selected>Select</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -24,7 +25,8 @@
                 </div>
                 <div class="form-group">
                   <label>Going to</label>
-                  <select class="form-control">
+                  <select class="form-control" placeholder="Select">
+                    <option disabled selected>Select</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -76,12 +78,11 @@
                   <input type="date" class="form-control" id="" placeholder="22-03-2018">
                 </div>
                 <div class="form-group">
-                  <label>Select a Hotel</label>
+                  <label>Select a Hotel Grade</label>
                   <select class="form-control">
-                    <option>Hotel 1</option>
-                    <option>Hotel 2</option>
-                    <option>Hotel 3</option>
-                    <option>Hotel 4</option>
+                    <option>3 star</option>
+                    <option>4 star</option>
+                    <option>5 star</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -90,26 +91,26 @@
               </form>
             </div>
             <div class="advertize-sect">
-              <p>Purchage your trip today and pay later with
+              <p>Purchase your trip today and pay later with
                 <img src="/static/images/pay-blue.png" alt="Sun Travell">
               </p>
               <p class="purchage-img">
                 <img src="/static/images/purchage-trip.png" alt="Sun Travell">
               </p>
-              <p class="short-desc">Purchage your trip today and pay for it over the next 12 months with paays.</p>
+              <p class="short-desc">Purchase your trip today and pay for it over the next 12 months with paays.</p>
               <button class="btn btn-primary">Learn more</button>
             </div>
           </div>
           <div class="col-sm-9 list-sidebar-col-right">
             <ul>
-              <li>
+              <li v-for="item in packages">
                 <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-1.png" alt="Sun Travell">
+                  <img :src="item.img" alt="Sun Travell">
                 </div>
                 <div class="col-sm-6 details-mid-sect">
-                  <h1>Memories varadero beach resort</h1>
+                  <h1>{{item.title}}</h1>
                   <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Varadero</h5>
+                  <h5>{{item.subtitle}}</h5>
                   <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
                   <ul>
                     <li>Lorem ipsum dolor sit amet</li>
@@ -119,179 +120,11 @@
                   </ul>
                 </div>
                 <div class="col-sm-3 payment-mid-sect">
-                  <h1>$650<br/> <span class="">taxes & fees incl.</span></h1>
+                  <h1>${{item.price}}<br/> <span class="">taxes & fees incl.</span></h1>
                   <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $55 <br/><span> / month*</span></h3>
+                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> ${{ item.emi }} <br/><span> / month*</span></h3>
                   </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-2.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Vacation Package</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Varadero</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$780<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $65 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-3.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Vacation Package</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Varadero</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$899<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $75 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-4.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Grand hyatt hotal beachview</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Varadero</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$926<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $77 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-5.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Fun holiday beach resort</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Jamaica</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$1020<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $85 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-6.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Starfish Varadero</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Varadero</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$899<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $75 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-7.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Roc arenas doradas</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Varadero</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$926<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $77 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
-                </div>
-              </li>
-              <li>
-                <div class="col-sm-3" style="padding-left: 0;">
-                  <img src="/static/images/vacation-8.png" alt="Sun Travell">
-                </div>
-                <div class="col-sm-6 details-mid-sect">
-                  <h1>Be live collection marien</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Puerto plata</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <button class="btn btn-default">Read More</button>
-                  </ul>
-                </div>
-                <div class="col-sm-3 payment-mid-sect">
-                  <h1>$1020<br/> <span class="">taxes & fees incl.</span></h1>
-                  <div class="pay-low-sect">
-                    <h3><span style="color: rgb(135, 156, 169);"><i>Pay as low as</i></span> <br/> $85 <br/><span> / month*</span></h3>
-                  </div>
-                  <a href="#/BookingDetail" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+                  <router-link :to="{ path: `/BookingDetail?cost=${item.price}&emi=${item.emi}` }" class="btn btn-primary">Select <span class="pull-right"><i class="fa fa-chevron-right"></i></span></router-link>
                 </div>
               </li>
             </ul>
@@ -307,7 +140,65 @@ export default {
   name: 'BookingPackage',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      packages: [{
+        img: '/static/images/vacation-1.png',
+        title: 'Memories Varadero Beach Resort',
+        price: 650,
+        subtitle: 'Varadero',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 55
+      }, {
+        img: '/static/images/sebastien-jermer-4.png',
+        title: 'Vacation Package',
+        price: 780,
+        subtitle: 'Varadero',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 65
+      }, {
+        img: '/static/images/vacation-3.png',
+        title: 'Vacation Package',
+        price: 899,
+        subtitle: 'Starfish Cayo Santa Maria',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 75
+      }, {
+        img: '/static/images/vacation-4.png',
+        title: 'Grand Hyatt Hotal Beachview',
+        price: 926,
+        subtitle: 'Varadero',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 77
+      }, {
+        img: '/static/images/vacation-5.png',
+        title: 'Fun Holiday Beach Resort',
+        price: 1020,
+        subtitle: 'Jamaica',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 85
+      }, {
+        img: '/static/images/vacation-6.png',
+        title: 'Starfish Varadero',
+        price: 899,
+        subtitle: 'Varadero',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 75
+      },{
+        img: '/static/images/vacation-7.png',
+        title: 'Roc Arenas Doradas',
+        price: 926,
+        subtitle: 'Varadero',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 77
+      },
+      {
+        img: '/static/images/vacation-8.png',
+        title: 'Be Live Collection Marien',
+        price: 1020,
+        subtitle: 'Puerto Plata',
+        details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
+        emi: 85
+      }]
     }
   }
 }

@@ -113,9 +113,7 @@
                   <h5>{{item.subtitle}}</h5>
                   <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
                   <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
+                    <li v-for="listItem in item.list">{{ listItem }}</li>
                     <button class="btn btn-default">Read More</button>
                   </ul>
                 </div>
@@ -146,6 +144,11 @@ export default {
         title: 'Memories Varadero Beach Resort',
         price: 650,
         subtitle: 'Varadero',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 55
       }, {
@@ -153,6 +156,11 @@ export default {
         title: 'Vacation Package',
         price: 780,
         subtitle: 'Varadero',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 65
       }, {
@@ -160,6 +168,11 @@ export default {
         title: 'Vacation Package',
         price: 899,
         subtitle: 'Starfish Cayo Santa Maria',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 75
       }, {
@@ -167,6 +180,11 @@ export default {
         title: 'Grand Hyatt Hotal Beachview',
         price: 926,
         subtitle: 'Varadero',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 77
       }, {
@@ -174,6 +192,11 @@ export default {
         title: 'Fun Holiday Beach Resort',
         price: 1020,
         subtitle: 'Jamaica',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 85
       }, {
@@ -181,6 +204,11 @@ export default {
         title: 'Starfish Varadero',
         price: 899,
         subtitle: 'Varadero',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 75
       },{
@@ -188,6 +216,11 @@ export default {
         title: 'Roc Arenas Doradas',
         price: 926,
         subtitle: 'Varadero',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 77
       },
@@ -196,6 +229,11 @@ export default {
         title: 'Be Live Collection Marien',
         price: 1020,
         subtitle: 'Puerto Plata',
+         list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         details: 'Wed, March 21,2018 | 7 Days / All Inclusive',
         emi: 85
       }]

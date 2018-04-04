@@ -168,7 +168,7 @@
             <div class="price-total-wrape">
               <p><i>Pay as low as</i></p>
               <h3>${{ emi  }}<span> / month</span></h3>
-              <p>using <img src="/static/images/booking-img.png" alt="Sun Travell"> at Checkout</p>
+              <p>using <img class="logo-paays" src="/static/images/booking-img.png" alt="Sun Travell"> at Checkout</p>
               <a href="#/BookingPackage" class="btn btn-primary">Learn more</a>
             </div>
           </div>
@@ -268,4 +268,7 @@ a {
   color: #42b983;
 }
 
+.logo-paays {
+  margin-top: 6px;
+}
 </style>

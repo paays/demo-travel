@@ -186,13 +186,11 @@
                 </div>
                 <div class="col-sm-6 details-mid-sect">
                   <h1>{{item.title}}</h1>
-                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travell"></p>
-                  <h5>Starfish Cayo Santa Maria</h5>
-                  <h4>Wed, March 21,2018 | 7 Days / All Inclusive</h4>
+                  <p class="star-rating"><img src="/static/images/star.png" alt="Sun Travel"></p>
+                  <h5>{{item.subtitle}}</h5>
+                  <h4>{{ item.date  }} | 7 Days / All Inclusive</h4>
                   <ul>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Lorem ipsum dolor sit amet</li>
+                    <li v-for="listItem in item.list">{{ listItem }}</li>
                     <button class="btn btn-default">Read More</button>
                   </ul>
                 </div>
@@ -296,23 +294,51 @@ export default {
       packages: [{
         img: '/static/images/sebastien-jermer-5.png',
         title: 'Starfish Cayo Santa Maria',
+        subtitle: 'Cayo Santa Maria, Cuba',
+        date: 'Wed, March 14, 2018',
+        list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
         price: 650,
         emi: 55
       }, {
         img: '/static/images/sebastien-jermer-4.png',
         title: 'Roc Barlovento',
-        price: 650,
-        emi: 55
+        subtitle: 'Cayo Santa Maria, Cuba',
+        date: 'Wed, March 14, 2018',
+        list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
+        price: 780,
+        emi: 65
       }, {
         img: '/static/images/sebastien-jermer-3.png',
         title: 'Playa Blanca Resort',
-        price: 650,
-        emi: 55
+        subtitle: 'Cayo Coco',
+        date: 'Wed, March 14, 2018',
+        list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
+        price: 899,
+        emi: 75
       }, {
         img: '/static/images/sebastien-jermer.png',
         title: 'Memories Flamenco Beach Resort',
-        price: 650,
-        emi: 55
+        subtitle: 'Varadero',
+        date: 'Wed, March 14, 2018',
+        list: [
+          'Exclusive Viva Cuba program featuring cigar education & appreciation',
+          'Scuba diving lessons available in the pool',
+          'The Whole family can whoosh down the exciting'
+        ],
+        price: 926,
+        emi: 77
       }]
     }
   }

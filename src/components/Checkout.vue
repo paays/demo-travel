@@ -162,7 +162,7 @@ export default {
   },
   methods: {
     generateUrl(){
-      return `http://18.216.107.27:9000/paays?emi=${this.emi}`;
+      return `http://18.216.107.27:9000/paays?emi=${this.emi}&amount=${this.total}`;
     }
   }
 }

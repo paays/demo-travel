@@ -79,7 +79,7 @@
                     <tbody>
                       <tr>
                         <td>Air Transportation Charges</td>
-                        <td align="right"><b>$285.00</b></td>
+                        <td align="right"><b>${{airFee}}</b></td>
                       </tr>
                       <tr>
                         <td>Surcharges</td>
@@ -130,9 +130,9 @@ export default {
     return {
       seen: false,
       msg: 'Welcome to Your Vue.js App',
-      total: 1330.00,
-      taxes: '380.00',
-      airFee: '285.00',
+      total: 665,
+      taxes: 380,
+      airFee: 285,
       emi: 110,
       year: 1,
       rate: 9.99,
@@ -157,12 +157,21 @@ export default {
     'checked': 'calculateTotal'
   },
   created() {
-    this.total = + (this.$route.query.total);
-    this.emi = this.$route.query.emi;
+    this.total = (+ (this.$route.query.total)) || this.total;
+    this.emi = this.$route.query.emi || this.emi;
+    this.airFee = this.total - this.taxes;
+  },
+  watch: {
+    '$route': 'setEmi'
   },
   methods: {
     generateUrl(){
       return `http://18.216.107.27:9000/paays?emi=${this.emi}&amount=${this.total}`;
+    },
+    setEmi(){
+      this.total = (+ (this.$route.query.total)) || this.amount;
+      this.emi = this.$route.query.emi || this.emi;
+      this.airFee = this.total - this.taxes;
     }
   }
 }

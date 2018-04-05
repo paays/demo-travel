@@ -158,7 +158,7 @@
                       </tr>
                       <tr>
                         <td ><b>Total</b></td>
-                        <td align="right"><b>{{total | currency }} CAD</b></td>
+                        <td align="right"><b>{{ total | currency }} CAD</b></td>
                       </tr>
                     </tbody>
                   </table>
@@ -195,9 +195,9 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      total: 1330.00,
-      taxes: '380.00',
-      airFee: '285.00',
+      total: 0,
+      taxes: 380.00,
+      airFee: 285.00,
       emi: 110,
       year: 1,
       rate: 9.99,
@@ -230,8 +230,8 @@ export default {
   },
   methods: {
       setValues(){
-        this.amount = + this.$route.query.cost;
-        this.emi = + this.$route.query.emi;
+        this.amount = (+ this.$route.query.cost) || this.amount;
+        this.emi = + this.$route.query.emi || this.emi;
         this.calculateTotal(0);
       },
       getRate(total){
@@ -246,6 +246,7 @@ export default {
       calculateTotal(val){
         this.total = (val*2) + this.amount;
         this.emi = this.monthly(this.total);
+        this.airFee = this.total - 380;
       }
   }
 }

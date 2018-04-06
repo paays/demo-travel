@@ -236,7 +236,7 @@ export default {
         return total*(this.rate/100);
       },
       payable(total){
-        return this.getRate()+total;
+        return this.getRate(total)+total;
       },
       monthly(total){
         return ((total + this.getRate(total))/12).toFixed(0);

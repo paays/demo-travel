@@ -146,7 +146,7 @@
                     <tbody>
                       <tr>
                         <td>Hotel and Air Charges</td>
-                        <td align="right"><b>${{ airFee }}</b></td>
+                        <td align="right"><b>${{ amount }}</b></td>
                       </tr>
                       <tr>
                         <td>Surcharges</td>
@@ -196,12 +196,10 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       total: 0,
-      taxes: 380.00,
-      airFee: 285.00,
+      taxes: 380,
       emi: 110,
-      year: 1,
       rate: 9.99,
-      amount: 1200,
+      amount: 820,
       checked: 0,
       rates: [{
           duration: '7 days',
@@ -222,16 +220,16 @@ export default {
     }
   },
   watch: {
-    'checked': 'calculateTotal',
-    '$route': 'setValues'
+    'checked': 'calculateTotal', // calculate total when radio bbox is checked
+    '$route': 'setValues'  // same as created but listens to route change in case users moves back and forth between routes
   },
   created() {
     this.setValues();
+    // set initial value for cost and taxes
   },
   methods: {
       setValues(){
-        this.amount = (+ this.$route.query.cost) || this.amount;
-        this.emi = + this.$route.query.emi || this.emi;
+        // pass default standard room rate
         this.calculateTotal(0);
       },
       getRate(total){
@@ -244,9 +242,18 @@ export default {
         return ((total + this.getRate(total))/12).toFixed(0);
       },
       calculateTotal(val){
-        this.total = (val*2) + this.amount;
-        this.emi = this.monthly(this.total);
-        this.airFee = this.total - 380;
+         // if(cost is passed from route )
+        //   amount = cost from route - default tax
+        // else
+        //   amount = initial amount
+        // check route for emi value or pass emi value
+        let amount = (+this.$route.query.cost - 380) || this.amount;
+        this.amount = ((val*2*7) + Math.ceil(amount)).toFixed(0);
+        this.taxes = (val>0) ? 380*7 : 380; // gets the standard tax rate or the checked values rate
+        this.total = (+this.amount) + (+this.taxes);
+        // emi is calculated to show the default emi shown on the route or calculate it in case the user has selected
+        // the superior or the the junior bedroom
+        this.emi = (val == 0 && this.$route.query.emi) ? this.$route.query.emi  : this.monthly(this.total);
       }
   }
 }

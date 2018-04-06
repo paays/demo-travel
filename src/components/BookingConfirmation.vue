@@ -32,7 +32,7 @@
                       </tr>
                       <tr>
                         <td>Taxes, Fees and Charges</td>
-                        <td align="right">+ taxes 380.00</td>
+                        <td align="right">$ {{tax}}</td>
                       </tr>
                       <tr>
                         <td ><big>Total</big></td>
@@ -73,7 +73,18 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       total: 1330.00,
-      airFee: 285.00
+      tax:380,
+      airFee: 950.00
+    }
+  },
+  created(){
+     this.getValuesFromRoute()
+  },
+  methods: {
+    getValuesFromRoute(){
+      this.total = +this.$route.query.total || this.total;
+      this.tax = this.$route.query.tax || this.tax;
+      this.airFee = (this.total - this.tax) || this.airFee;
     }
   }
 }

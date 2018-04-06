@@ -87,7 +87,7 @@
                       </tr>
                       <tr>
                         <td>Taxes, Fees and Charges</td>
-                        <td align="right"><b>$380.00</b></td>
+                        <td align="right"><b>${{taxes}}</b></td>
                       </tr>
                       <tr>
                         <td ><b>Total</b></td>
@@ -136,7 +136,6 @@ export default {
       emi: 110,
       year: 1,
       rate: 9.99,
-      amount: 1200,
       checked: 29.99,
       rates: [{
           duration: '7 days',
@@ -157,7 +156,9 @@ export default {
     'checked': 'calculateTotal'
   },
   created() {
+   // console.log('here');
     this.total = (+ (this.$route.query.total)) || this.total;
+    this.taxes = (+ (this.$route.query.tax)) || this.taxes;
     this.emi = this.$route.query.emi || this.emi;
     this.airFee = this.total - this.taxes;
   },
@@ -169,9 +170,12 @@ export default {
       return `http://18.216.107.27:9000/paays?emi=${this.emi}&amount=${this.total}`;
     },
     setEmi(){
-      this.total = (+ (this.$route.query.total)) || this.amount;
+      this.taxes = (+this.$route.query.tax) || this.taxes;
+      this.total = (+this.$route.query.total) || this.total;
+      console.log(this.taxes);
       this.emi = this.$route.query.emi || this.emi;
       this.airFee = this.total - this.taxes;
+      console.log(this.taxes);
     }
   }
 }

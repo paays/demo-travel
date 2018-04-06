@@ -196,10 +196,10 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       total: 0,
-      taxes: 380,
-      emi: 110,
+      taxes: 80,
+      emi: 55,
       rate: 9.99,
-      amount: 820,
+      amount: 650,
       checked: 0,
       rates: [{
           duration: '7 days',
@@ -247,9 +247,9 @@ export default {
         // else
         //   amount = initial amount
         // check route for emi value or pass emi value
-        let amount = (+this.$route.query.cost - 380) || this.amount;
+        let amount = (+this.$route.query.cost) || this.amount;
         this.amount = ((val*2*7) + Math.ceil(amount)).toFixed(0);
-        this.taxes = (val>0) ? 380*7 : 380; // gets the standard tax rate or the checked values rate
+        this.taxes = (val>0) ? 80*7 : 80; // gets the standard tax rate or the checked values rate
         this.total = (+this.amount) + (+this.taxes);
         // emi is calculated to show the default emi shown on the route or calculate it in case the user has selected
         // the superior or the the junior bedroom

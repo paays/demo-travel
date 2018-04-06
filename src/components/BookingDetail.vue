@@ -242,18 +242,20 @@ export default {
         return ((total + this.getRate(total))/12).toFixed(0);
       },
       calculateTotal(val){
-         // if(cost is passed from route )
+          // if(cost is passed from route )
         //   amount = cost from route - default tax
         // else
         //   amount = initial amount
         // check route for emi value or pass emi value
-        let amount = (+this.$route.query.cost) || this.amount;
-        this.amount = ((val*2*7) + Math.ceil(amount)).toFixed(0);
-        this.taxes = (val>0) ? 80*7 : 80; // gets the standard tax rate or the checked values rate
-        this.total = (+this.amount) + (+this.taxes);
-        // emi is calculated to show the default emi shown on the route or calculate it in case the user has selected
-        // the superior or the the junior bedroom
-        this.emi = (val == 0 && this.$route.query.emi) ? this.$route.query.emi  : this.monthly(this.total);
+          let amount = (+this.$route.query.cost) || this.amount;
+          this.amount = ((amount+val)*2)*7;
+        // let amount = (+this.$route.query.cost) || this.amount;
+        // this.amount = ((val*2*7) + Math.ceil(amount)).toFixed(0);
+          this.taxes = (val>0) ? 80*7 : 80; // gets the standard tax rate or the checked values rate
+          this.total = (+this.amount) + (+this.taxes);
+          // emi is calculated to show the default emi shown on the route or calculate it in case the user has selected
+          // the superior or the the junior bedroom  (val == 0 && this.$route.query.emi) ? this.$route.query.emi  :
+          this.emi = this.monthly(this.total);
       }
   }
 }

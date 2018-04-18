@@ -248,7 +248,11 @@ export default {
         //   amount = initial amount
         // check route for emi value or pass emi value
           let amount = (+this.$route.query.cost) || this.amount;
-          this.amount = ((amount+val)*2)*7;
+          let amount_for_two = amount *2;
+          let val_for_two_seven = val * 2* 7;
+
+          this.amount =  Math.ceil(amount_for_two+val_for_two_seven).toFixed(0);
+          
         // let amount = (+this.$route.query.cost) || this.amount;
         // this.amount = ((val*2*7) + Math.ceil(amount)).toFixed(0);
           this.taxes = (val>0) ? 80*7 : 80; // gets the standard tax rate or the checked values rate

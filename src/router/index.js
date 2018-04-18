@@ -5,6 +5,7 @@ import BookingDetail from '@/components/BookingDetail'
 import Checkout from '@/components/Checkout'
 import BookingPackage from '@/components/BookingPackage'
 import BookingConfirmation from '@/components/BookingConfirmation'
+import PaymentConfirmation from '@/components/PaymentConfirmation'
 
 Vue.use(Router)
 

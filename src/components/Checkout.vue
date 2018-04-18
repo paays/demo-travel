@@ -35,7 +35,8 @@
               </div>
             </div>
             <div id="apply-finance" v-show="seen === 'finance'">
-              <iframe width="100%" height="500" :src="generateUrl()" frameborder="0" allowfullscreen></iframe>
+              <paays-custom-element></paays-custom-element>
+              <!-- <iframe width="100%" height="500" :src="generateUrl()" frameborder="0" allowfullscreen></iframe> -->
             </div>
           </div>
           <div class="col-sm-3">
@@ -166,8 +167,8 @@ export default {
     '$route': 'setEmi'
   },
   methods: {
-    generateUrl(){
-      return `http://18.216.107.27:9000/paays?emi=${this.emi}&amount=${this.total}`;
+    generateUrl(){//18.216.107.27
+      return `http://localhost:9000/?emi=${this.emi}&amount=${this.total}`;
     },
     setEmi(){
       this.taxes = (+this.$route.query.tax) || this.taxes;

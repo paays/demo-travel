@@ -168,7 +168,7 @@ export default {
   },
   methods: {
     generateUrl(){//18.216.107.27
-      return `http://localhost:9000/?emi=${this.emi}&amount=${this.total}`;
+      return `http://18.216.107.27:9000/?emi=${this.emi}&amount=${this.total}`;
     },
     setEmi(){
       this.taxes = (+this.$route.query.tax) || this.taxes;

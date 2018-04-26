@@ -35,8 +35,7 @@
               </div>
             </div>
             <div id="apply-finance" v-show="seen === 'finance'">
-              <paays-custom-element></paays-custom-element>
-              <!-- <iframe width="100%" height="500" :src="generateUrl()" frameborder="0" allowfullscreen></iframe> -->
+              <paays-custom-element ref="payment" :total="total" :emi="emi" :redirect-url="`http://18.216.107.27:8080/#/BookingConfirmation?total=${this.total}&tax=${this.taxes}&emi=${this.emi}`"></paays-custom-element>
             </div>
           </div>
           <div class="col-sm-3">
@@ -167,8 +166,10 @@ export default {
     '$route': 'setEmi'
   },
   methods: {
-    generateUrl(){//18.216.107.27
-      return `http://18.216.107.27:9000/?emi=${this.emi}&amount=${this.total}`;
+    mounted(){
+      document.addEventListener('paays-success', (e) => {
+          console.log(e);
+      });
     },
     setEmi(){
       this.taxes = (+this.$route.query.tax) || this.taxes;

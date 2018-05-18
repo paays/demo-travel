@@ -34,9 +34,7 @@
                 </form>
               </div>
             </div>
-            <div id="apply-finance" v-show="seen === 'finance'">
-              <paays-custom-element ref="payment" :total="total" :emi="emi" :redirect-url="`http://18.216.107.27:8080/#/BookingConfirmation?total=${this.total}&tax=${this.taxes}&emi=${this.emi}`"></paays-custom-element>
-            </div>
+            <div id="apply-finance" v-show="seen === 'finance'"></div>
           </div>
           <div class="col-sm-3">
             <h1 class="booking-sm-title">Booking Summary</h1>
@@ -156,29 +154,24 @@ export default {
     'checked': 'calculateTotal'
   },
   created() {
-   // console.log('here');
     this.total = (+ (this.$route.query.total)) || this.total;
     this.taxes = (+ (this.$route.query.tax)) || this.taxes;
     this.emi = this.$route.query.emi || this.emi;
     this.airFee = this.total - this.taxes;
   },
-  watch: {
-    '$route': 'setEmi'
+  mounted(){
+      this.createElement();
   },
   methods: {
-    mounted(){
-      document.addEventListener('paays-success', (e) => {
-          console.log(e);
+    createElement(){
+      createPaays('apply-finance', {
+        total: this.total,
+        // taxes: this.taxes,
+        emi: this.emi,
+        // airFee: this.airFee,
+        redirectUrl:`http://18.216.107.27:8080/#/BookingConfirmation?total=${this.total}&tax=${this.taxes}&emi=${this.emi}`
       });
-    },
-    setEmi(){
-      this.taxes = (+this.$route.query.tax) || this.taxes;
-      this.total = (+this.$route.query.total) || this.total;
-      console.log(this.taxes);
-      this.emi = this.$route.query.emi || this.emi;
-      this.airFee = this.total - this.taxes;
-      console.log(this.taxes);
-    }
+    }    
   }
 }
 </script>

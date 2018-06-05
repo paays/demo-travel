@@ -35,8 +35,8 @@
               </div>
             </div>
             <div id="apply-finance" v-show="seen === 'finance'">
-              <paays-custom-element></paays-custom-element>
-              <!-- <iframe width="100%" height="500" :src="generateUrl()" frameborder="0" allowfullscreen></iframe> -->
+              <!-- <paays-custom-element></paays-custom-element> -->
+              <iframe width="100%" height="500" :src="generateUrl()" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
           <div class="col-sm-3">
